@@ -1,9 +1,9 @@
 // component for tic-tac-toe players
 import { useState } from 'react'
 
-export default function Player({ initialName, symbol }) {
-  const [isEditing, setIsEditing] = useState(false)
-  const [playerName, setPlayerName] = useState(initialName)
+export default function Player({ initialName, symbol, isActive }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [playerName, setPlayerName] = useState(initialName);
 
   const handleEditingTrue = () => {
     setIsEditing((editing) => !editing)
@@ -14,7 +14,7 @@ export default function Player({ initialName, symbol }) {
   }
 
   return (
-    <li>
+    <li className={isActive ? 'active' : undefined}>
       <span className="player">
         {isEditing
           ? <input type="text" value={playerName} onChange={handleChange} />
