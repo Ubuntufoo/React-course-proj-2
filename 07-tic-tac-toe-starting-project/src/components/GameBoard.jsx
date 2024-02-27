@@ -13,7 +13,7 @@ export default function GameBoard({ onSelectSquare, board }) {
                   <li key={colIndex}>
                     <button
                       onClick={() => onSelectSquare(rowIndex, colIndex)}
-                      disabled={gameBoard[rowIndex][colIndex]}
+                      disabled={board[rowIndex][colIndex]}
                     >
                       {playerSymbol}
                     </button>
